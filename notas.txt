@@ -1,0 +1,67 @@
+1. Desarrollo MEAN (MongoDB, Express, Angular, NodeJS)
+
+2. MongoDB Server --> es el servidor 
+   MongoDB Comppas --> interfaz grafica para acceder al servidor
+   Postman --> servido para probar apis services
+
+3. MongoDB
+    - Se debe crear una carpeta para guardar las bases de datos C:data/db 
+    - ejecutar mongoDB.exe C:\Program Files\MongoDB\Server\7.0\bin
+    3.1 Tipos de BDD
+    *SQL
+        -Relacionales
+        -Tablas
+        -Esquemas
+        -Lenguaje SQL para consultas
+    *No SQL 
+        -No Relacionales
+        -Orientadas a colecciones de documentos (json, bson)
+        -Lenguaje JavaScript para consultas
+
+    Lo que vamos hacer es guardar informacion y recuperar informacion (backend) y luego lo conectamos con el froned
+--------------------------------------------------
+4. NodeJS: JavaScript en el servidor
+    4.1 Coneccion a BDD
+    4.2 Crear el servidor
+    4.3 Usar postman
+    4.4 Generar modelos
+    4.5 Crear contenedores y rutas (controlador que pueda controlar las peticiones y las rutas donde debo ir)
+----------------------------------------------------------
+5. API Node: es un servicio backend que nos permita recibir peticiones HTTP y devolver un json,
+este servicio lo puede consumir cualquier dispositivo o app que entienda el protocolo HTTP
+
+    5.1 Crear un proyecto NodeJS
+        ---- npm init ----
+        {
+        "name": "peliculas",
+        "version": "1.0.0",
+        "description": "backend peliculas",
+        "main": "index.js",
+        "scripts": {
+            "test": "echo \"Error: no test specified\" && exit 1"
+        },
+        "keywords": [
+            "pelicula"
+        ],
+        "author": "Milton",
+        "license": "ISC"
+        }
+    
+    5.3 agregar dependencias o paquetes para el proyecto
+    5.4 agregar un servidor para procesar las peticiones 
+        ------ npm install express --save -------
+    5.5 paquete para convertir nuestras peticiones de backend en json
+        ------ npm install body-parser --save -------
+
+        SI YO UTILIZO MongoDB, MYSQL NECESITO LO QUE EXTRAIGO SE CONVIERTA EN JSON 
+
+    5.6 paquete para manejo de archivos
+        ------ npm install connect-multiparty --save -------
+    5.7 paquete para trabajar con MongoDB
+        ------ npm install mongoose --save -------
+    5.8 paquete para refrescar el servidor 
+        ------ npm install nodemon --save ------
+
+
+
+ng new cineI --no-standalone --routing --ssr=false
