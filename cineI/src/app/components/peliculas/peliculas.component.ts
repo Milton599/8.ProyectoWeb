@@ -28,7 +28,7 @@ export class PeliculasComponent implements OnInit{
   getPeliculasCine(){
     this._peliculaService.getPeliculas().subscribe( //subscribe para verificar si que existen
       response =>{ //cuando el observable remite un valor cuando la solicitud http es exitosa 
-        if(response.peliculas){
+        if(response.peliculas){   //.peliculas es lo que manda el backend del controllador
           this.peliculas=response.peliculas;
         }
       },

@@ -40,7 +40,8 @@ let controller={
             if(peliculas.length === 0){
                 return res.status(404).send({message:"No existen peliculas"})
             }
-            return res.status(200).send({peliculas})
+            //CADA QUE SE ENVIE UNA SOLICITUD DESDE EL FRONTEND, EL BACKEND ENVIARA LA PROPIEDAD peliculas --> response.peliculas
+            return res.status(200).send({peliculas}) 
         } catch (error) {
             return res.status(199).send({message:"Error al recuperar los datos"})
         }
