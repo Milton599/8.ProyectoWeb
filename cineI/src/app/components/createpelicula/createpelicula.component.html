@@ -1,1 +1,49 @@
-<p>createpelicula works!</p>
+<div class="container">
+    <div class="message sucess" *ngIf="status =='success'">
+        La pelicula se ha guardado correctamente, puedes verla <a [routerLink]="['/pelicula',idGuardado]"> aqui </a>
+    </div>
+    <div class="message failed" *ngIf="status =='failed'">
+        La pelicula no se ha podido guardar
+    </div>
+    <h2>{{titulo}}</h2>
+    <!-- va a encadenara un evento ngSubmit el cula va a ejecutar el metodo guardarPelicula pasandole este formulario -->
+    <form #peliculaForm="ngForm" (ngSubmit)="guardarPelicula(peliculaForm)"> <!-- como input es de angular, el form tambien -->
+        <p>
+            <label for="nombre">Nombre</label>
+            &nbsp;
+            <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="pelicula.nombre" required> <!-- apartir #nombre es un formulario de angular-->
+            <span *ngIf = "nombre.touched && !nombre.valid">
+                Nombre Obligatorio
+            </span>
+        </p>
+        <p>
+            <label for="nombre">Tipo</label>
+            &nbsp;
+            <input type="text" name="tipo" #tipo="ngModel" [(ngModel)]="pelicula.tipo" required> <!-- apartir #nombre es un formulario de angular-->
+            <span *ngIf = "tipo.touched && !tipo.valid">
+                Tipo Obligatorio
+            </span>
+        </p>
+        <p>
+            <label for="nombre">Anio</label>
+            &nbsp;
+            <input type="number" name="anio" #anio="ngModel" [(ngModel)]="pelicula.anio" required> <!-- apartir #nombre es un formulario de angular-->
+            <!-- no va la directiva ngif porque ya pongo type number -->
+        </p>
+        <p>
+            <label for="nombre">Precio</label>
+            &nbsp;
+            <input type="number" name="precio" #precio="ngModel" [(ngModel)]="pelicula.precio" required> 
+        </p>
+        <p>
+            <label for="nombre">Imagen</label>
+<!--             <span *ngIf="pelicula.imagen" style="float: none;"> 
+                    <img src="{{url+'imagen/'+pelicula.imagen}}" style="width: 100px;" alt="">
+            </span> -->
+            &nbsp;
+            <input type="file" #archivoImagen (change)="imagenChangeEvent($event)"> <!-- #archivoImagen es nuestro @ViewChild | el evento change es para pasarle a nuestra variable archivosParaCargar -->
+        </p>
+        <input type="submit" value="Guardar" [disabled]="!peliculaForm.form.valid"> <!-- Disabled para que se active cuando los datos ingresados son correctos -->
+    </form>
+</div>
+

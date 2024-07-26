@@ -22,6 +22,20 @@ export class PeliculasComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.getPeliculasCine();
+  }
+
+  getPeliculasCine(){
+    this._peliculaService.getPeliculas().subscribe( //subscribe para verificar si que existen
+      response =>{ //cuando el observable remite un valor cuando la solicitud http es exitosa 
+        if(response.peliculas){
+          this.peliculas=response.peliculas;
+        }
+      },
+      error =>{
+        console.log(error);
+        
+      }
+    )
   }
 }

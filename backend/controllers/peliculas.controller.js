@@ -35,7 +35,8 @@ let controller={
 
     getPeliculas: async function(req,res){
         try {
-            const peliculas = await Pelicula.find({}).sort().exec() //para mostrar las peliculas
+            //Una promesa es un objeto en JavaScript que representa la eventual conclusión o falla de una operación asíncrona y su valor resultante.
+            const peliculas = await Pelicula.find({}).sort().exec() //exec para ejecutar la consulta y retorna una promes
             if(peliculas.length === 0){
                 return res.status(404).send({message:"No existen peliculas"})
             }

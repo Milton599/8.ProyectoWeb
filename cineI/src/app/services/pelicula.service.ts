@@ -18,6 +18,7 @@ export class PeliculaService{
     //Ver todas las peliculas   https://localhost:3600/peliculas
     getPeliculas():Observable<any>{
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
+        console.log(this.url);
         return this._http.get(this.url+'peliculas',{headers:headers});
     } 
 

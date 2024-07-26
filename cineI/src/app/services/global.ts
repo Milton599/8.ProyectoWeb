@@ -1,3 +1,3 @@
 export const Global={
-    url:'http://localhost:3600'   //DEL BACKEND
+    url:'http://localhost:3600/'   //DEL BACKEND
 }

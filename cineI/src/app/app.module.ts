@@ -30,7 +30,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,  //PARA LOS SERVICIOS
-    FormsModule  //PARA CREAR FORMULARIOS
+    FormsModule //PARA CREAR FORMULARIOS
   ],
   providers: [],
   bootstrap: [AppComponent]

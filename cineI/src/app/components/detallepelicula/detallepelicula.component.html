@@ -1,1 +1,25 @@
-<p>detallepelicula works!</p>
+<h2>Detalle Pelicula</h2>
+<div class="container">
+    <div class="imagen" *ngIf="pelicula.imagen"> <!-- si es que la pelicula tiene una imagen -->
+        <img src="{{url+'imagen/'+pelicula.imagen}}" alt="" *ngIf="pelicula.imagen">
+    </div>
+    <div class="clearflix"></div>
+</div>
+<div class="data">
+    <h3>{{pelicula.nombre}}</h3>
+    <h3>{{pelicula.tipo}}</h3>
+    <h3>{{pelicula.anio}}</h3>
+    <h3>{{pelicula.precio}}</h3>
+<!--     <h3>{{pelicula.imagen}}</h3> Aciendo esto solo traemos el texto-->
+     <p *ngIf="confirm == false">
+        <a [routerLink]="['/editar-pelicula', pelicula._id]" class="button-edit">Editar</a>
+        <a (click)="setConfirm(true)" class="button-delete">Borrar</a>
+     </p>
+
+     <p *ngIf="confirm == true">
+        <span class="confirm">¿Estas seguro de eliminar la pelicula?</span> <br>
+        <a (click)="setConfirm(false)" class="button-cancelar">Cancelar</a>
+        <a (click)="borrarPelicula(pelicula._id)" class="button-delete">Eliminar definitivamente</a>
+     </p>
+</div>
+

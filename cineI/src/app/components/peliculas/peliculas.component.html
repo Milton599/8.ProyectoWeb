@@ -1,1 +1,9 @@
-<p>peliculas works!</p>
+<h2>PELICULAS</h2>
+<ul>
+    <li *ngFor="let pelicula of peliculas" class="pelicula">
+        <a [routerLink]="['/pelicula',pelicula._id]"> <!-- Cuando le demos click vamos a tomar esos datos -->
+            <img src="{{url+'imagen/'+pelicula.imagen}}" alt="pelicula" width="100px" height="auto">
+            <h3> {{pelicula.nombre}} - {{pelicula.precio}} </h3>
+        </a>
+    </li>
+</ul>
